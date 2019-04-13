@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application_2</string>
+    <string name="say_something_to_your_self">Say something to yourself!</string>
+    <string name="send">send</string>
+</resources>
