@@ -14,7 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.security.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -27,6 +31,20 @@ public class MainActivity extends AppCompatActivity implements messageLongClickC
     myAdapter chatMsgAdapter = null;
 
 
+    public static String getCurrentTimeStamp(){
+        try {
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String currentDateTime = dateFormat.format(new Date()); // Find todays date
+
+            return currentDateTime;
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            return null;
+        }
+    }
+
 
 
     @Override
@@ -37,7 +55,25 @@ public class MainActivity extends AppCompatActivity implements messageLongClickC
         final messageDao dao = selfChatApp.messageDao;
 
 
-        msgList =  dao.getAll();
+
+
+        final dbWorker worker = selfChatApp.dbWorker;
+        worker.getAll(new dbWorker.GetAllCallback() {
+            @Override
+            public void resultsReady(final List<message> result) {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        msgList = result;
+                        chatMsgAdapter = new myAdapter(msgList);
+
+                    }
+                });
+            }
+        });
+
+        msgList = dao.getAll();
 
 
 
@@ -48,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements messageLongClickC
         final RecyclerView msgRecyclerView = (RecyclerView)findViewById(R.id.output);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         msgRecyclerView.setLayoutManager(linearLayoutManager);
-        this.chatMsgAdapter = new myAdapter(msgList);
+        chatMsgAdapter = new myAdapter(msgList);
         chatMsgAdapter.messageLongClickCallBack = this;
         msgRecyclerView.setAdapter(chatMsgAdapter);
         final EditText InputText = (EditText)findViewById(R.id.inputTxt);
@@ -59,10 +95,10 @@ public class MainActivity extends AppCompatActivity implements messageLongClickC
                 String msgContent = InputText.getText().toString();
                 if(!TextUtils.isEmpty(msgContent))
                 {
-                    message msg = new message(msgContent);
-
+                    message msg = new message(msgContent, getCurrentTimeStamp());
                     msgList.add(msg);
                     dao.insertAll(msg);
+                    worker.insertAll(msg);
                     int newMsgPosition = msgList.size() - 1;
                     chatMsgAdapter.notifyItemInserted(newMsgPosition);
                     msgRecyclerView.scrollToPosition(newMsgPosition);

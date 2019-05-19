@@ -8,16 +8,16 @@ import androidx.room.Room;
 public class SelfChatApp extends Application {
 
     public messageDao messageDao;
+        public dbWorker dbWorker;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        final AppDatabase db =
-                Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "message")
-                        .allowMainThreadQueries()
-                        .build();
+        dbWorker = new dbWorker(getApplicationContext());
 
-        this.messageDao = db.messageDao();
-        Log.d("size of the msg list", String.valueOf(this.messageDao.countMessages()));
+        AppDatabase database = Room.databaseBuilder(this, AppDatabase.class, "message")
+                .allowMainThreadQueries().build();
+        this.messageDao = database.messageDao();
+        dbWorker.countMessages();
     }
 }

@@ -5,6 +5,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 
+import java.sql.Timestamp;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -15,20 +17,32 @@ public class message implements Parcelable {
     @ColumnInfo(name = "message_content")
     private String msgContent;
 
+
+    @ColumnInfo(name = "message_timestamp")
+    private String timestamp;
+
     @PrimaryKey(autoGenerate = true)
     public int messageId;
 
-    message(String msgContent) {
+    message(String msgContent, String timestamp) {
         this.msgContent = msgContent;
-        //this.messageId = messageId;
+        this.timestamp = timestamp;
     }
 
     private message(Parcel in) {
         msgContent = in.readString();
     }
 
-    int getMessageId(){
+    int getmessageId(){
         return messageId;
+    }
+
+    String getmsgContent(){
+        return msgContent;
+    }
+
+    String getTimestamp(){
+        return timestamp;
     }
 
     public static final Creator<message> CREATOR = new Creator<message>() {
