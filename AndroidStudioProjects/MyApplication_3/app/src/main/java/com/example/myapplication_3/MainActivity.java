@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements messageLongClickC
 
 
 
-
+        setTitle("hello "+ getIntent().getStringExtra("name")+"!");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final RecyclerView msgRecyclerView = (RecyclerView)findViewById(R.id.output);

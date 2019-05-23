@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/newUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_new_user" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_fill_up_your_name" />
+
+    <EditText
+        android:id="@+id/fillName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/your_name"
+        android:inputType="textPersonName"
+         />
+
+    <Button
+        android:id="@+id/nameButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/this_is_my_name" />
+
+    <Button
+        android:id="@+id/skipButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/skip" />
+</LinearLayout>
