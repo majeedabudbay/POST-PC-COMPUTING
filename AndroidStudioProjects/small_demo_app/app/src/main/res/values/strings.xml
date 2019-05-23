@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">small_demo_app</string>
+    <string name="go_fish">go fish!</string>
+    <string name="tap_on_me">tap on me!</string>
+    <string name="button">Button</string>
+    <string name="type_5_numbers">type 5 numbers</string>
+</resources>
