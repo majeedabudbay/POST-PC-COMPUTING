@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".firstScreen"
+    tools:showIn="@layout/app_bar_first_screen">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/WatchtextView"
+        android:layout_width="318dp"
+        android:layout_height="81dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="53dp"
+        android:text="00:00:00"
+        android:textAlignment="center"
+        android:textColor="#009688"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/CalView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/CalTextView"
+        android:layout_width="213dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="452dp"
+        android:text="cal"
+        android:textColor="#009688"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CalView"
+        app:layout_constraintTop_toBottomOf="@+id/WatchtextView" />
+
+    <TextView
+        android:id="@+id/heartBeatTextView"
+        android:layout_width="207dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="76dp"
+        android:text="TextView"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/StopButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BPM"
+        app:layout_constraintTop_toBottomOf="@+id/CPM" />
+
+    <Button
+        android:id="@+id/StopButton"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="93dp"
+        android:text="End Session"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WatchtextView"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <TextView
+        android:id="@+id/CalView"
+        android:layout_width="151dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="11dp"
+        android:fontFamily="casual"
+        android:text="Calories :"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/CalTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+    <TextView
+        android:id="@+id/BPM"
+        android:layout_width="151dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="81dp"
+        android:fontFamily="casual"
+        android:text="BPM :"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/StopButton"
+        app:layout_constraintEnd_toStartOf="@+id/heartBeatTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CalPerM" />
+
+    <TextView
+        android:id="@+id/CalPerM"
+        android:layout_width="151dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="casual"
+        android:text="CPM :"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/BPM"
+        app:layout_constraintEnd_toStartOf="@+id/CPM"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CalView" />
+
+    <TextView
+        android:id="@+id/CPM"
+        android:layout_width="203dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/heartBeatTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/CalPerM"
+        app:layout_constraintTop_toBottomOf="@+id/CalTextView" />
+
+    <EditText
+        android:id="@+id/PersonalWightText"
+        android:layout_width="118dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="45dp"
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/PersonalAgeText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PersonalWight"
+        app:layout_constraintTop_toBottomOf="@+id/PersonalHightText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/PersonalAge"
+        android:layout_width="90dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="casual"
+        android:text="Age :"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PersonalWight" />
+
+    <EditText
+        android:id="@+id/PersonalAgeText"
+        android:layout_width="118dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PersonalAge"
+        app:layout_constraintTop_toBottomOf="@+id/PersonalWight" />
+
+    <EditText
+        android:id="@+id/PersonalHightText"
+        android:layout_width="118dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/PersonalWightText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PersonalHight"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PersonalHight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="casual"
+        android:text="Hight : (m)"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/PersonalWight"
+        app:layout_constraintEnd_toStartOf="@+id/PersonalHightText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PersonalWight"
+        android:layout_width="195dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="33dp"
+        android:fontFamily="casual"
+        android:textSize="30sp"
+        android:text="Wight : (kg)"
+        app:layout_constraintEnd_toStartOf="@+id/PersonalWightText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PersonalHight" />
+
+    <Button
+        android:id="@+id/PersonalButton"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="36dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relativeLayout"
+        android:layout_width="343dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/PersonalPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PersonalAge"
+        tools:context="com.example.niitpc.myapplication.MainActivity"
+        tools:ignore="MissingConstraints">
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="78dp"
+            android:layout_marginLeft="78dp"
+            android:layout_marginTop="49dp">
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/radioGroup"
+                android:layout_weight="1"
+                android:text="male" />
+
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="female" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="13dp"
+            android:text="Select gender:" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/PersonalPhone"
+        android:layout_width="353dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="casual"
+        android:text="Trainer Phone Number :"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/PersonalPhoneText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <EditText
+        android:id="@+id/PersonalPhoneText"
+        android:layout_width="265dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        android:phoneNumber="false"
+        app:layout_constraintBottom_toTopOf="@+id/PersonalButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PersonalPhone" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="RX:"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/readBuffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="0.9"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="&lt;Read Buffer>"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Status:"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/bluetoothStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignTop="@+id/checkboxLED1"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="0.9"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="&lt;Bluetooth Status>"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Bluetooth ON"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/off"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/scan"
+            android:layout_toEndOf="@+id/PairedBtn"
+            android:layout_toRightOf="@+id/PairedBtn"
+            android:text="Bluetooth OFF"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/PairedBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scan"
+            android:text="Show paired Devices"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/discover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/off"
+            android:layout_toEndOf="@+id/checkboxLED1"
+            android:layout_toRightOf="@+id/checkboxLED1"
+            android:text="Discover New Devices"
+            android:visibility="invisible" />
+
+        <ListView
+            android:id="@+id/devicesListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PairedBtn"
+            android:layout_alignEnd="@+id/off"
+            android:layout_alignRight="@+id/off"
+            android:choiceMode="singleChoice"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="253dp" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/ActivityWalk"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="44dp"
+        android:text="Walk"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ActivityDancing"
+        app:layout_constraintEnd_toStartOf="@+id/ActivityRun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ActivityRun"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="76dp"
+        android:text="Run"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/ActivityBicycle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ActivityWalk"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/ActivityDancing"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="392dp"
+        android:text="Dance"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ActivityBicycle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ActivityWalk" />
+
+    <Button
+        android:id="@+id/ActivityBicycle"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="392dp"
+        android:text="Bicycle"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ActivityDancing"
+        app:layout_constraintTop_toBottomOf="@+id/ActivityRun"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/EmgContact"
+        android:layout_width="298dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="51dp"
+        android:fontFamily="casual"
+        android:text="Emergency Contact : "
+        android:textSize="24sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/EmrEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/EmrEdit"
+        android:layout_width="325dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="457dp"
+        android:ems="10"
+        android:inputType="number|textPersonName"
+        android:text="Name"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmgContact" />
+
+    <Button
+        android:id="@+id/EmrButton"
+        android:layout_width="201dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginBottom="283dp"
+        android:text="Add Contact"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmrEdit" />
+
+
+    <TextView
+        android:id="@+id/historyText"
+        android:layout_width="235dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="186dp"
+        android:layout_marginBottom="51dp"
+        android:fontFamily="casual"
+        android:text="History : "
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyView"
+        android:layout_width="391dp"
+        android:layout_height="413dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="135dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
