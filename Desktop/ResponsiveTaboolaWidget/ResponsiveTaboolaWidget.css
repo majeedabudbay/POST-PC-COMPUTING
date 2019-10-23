@@ -1,0 +1,84 @@
+body {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+  background-color: #fcfcfc;
+  margin: 10px;
+  padding: 0;
+}
+
+.pg-title {
+  font-weight: 900;
+  color: #0050c8;
+  margin: 20px 0 0 20px;
+}
+
+h6 span {
+  font-family: 'Audiowide', arial, helvetica, sans-serif;
+  font-size: 1.5em;
+}
+
+#widget {
+  max-width: 768px;
+  margin: 30px auto;
+  float: left;
+  padding: 0 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.title:hover {
+  color: #0077b5;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.branding {
+  color: #0077b5;
+  margin-top: 5px;
+  padding-left: 0;
+  margin-bottom: 10px
+}
+
+p {
+  font-size: 0.6em;
+  font-style: italic;
+  font-weight: bold;
+  color: #0077b5;
+  text-transform: uppercase;
+}
+
+h3.title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 180px;
+  line-height: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+  a h5 {
+    font-size: 1em;
+  }
+
+  #widget {
+    grid-template-columns: none;
+    float: none;
+  }
+
+  img {
+    width: 80%;
+  }
+}
